@@ -10,7 +10,7 @@ import { Plus,Minus  } from 'lucide-react';
 import Swal from 'sweetalert2';
 import { useNavigate,NavLink } from "react-router-dom";
 import axios from 'axios';
-const url ="https://roughage-api.vercel.app/";
+const url ="/";
 const localUrl="http://localhost:3001/api/"
 const EmptyCart=()=>{
     return (
@@ -38,7 +38,7 @@ function Cart(){
             setQuant((prevQuant)=>{
                 var newQuant=prevQuant+1;
                 
-                fetch('https://roughage-api.vercel.app/api/updateCart',{
+                fetch('/api/updateCart',{
                     method:'post',
                     headers:{
                         'content-type':'application/json'
@@ -83,7 +83,7 @@ function Cart(){
                         setItemCount(itemCount-props.count);
                         const id=props.id;
                         try {
-                            await fetch('https://roughage-api.vercel.app/api/deleteProduct',{
+                            await fetch('/api/deleteProduct',{
                                 method:"DELETE",
                                 headers:{
                                     'content-type':"application/json"
@@ -144,7 +144,7 @@ function Cart(){
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
-                const response = await fetch( 'https://roughage-api.vercel.app/api/getCart' )
+                const response = await fetch( '/api/getCart' )
                 .then(async response=>{
                     const recievedData=await response.json();
                     // console.log(recievedData);
@@ -173,7 +173,7 @@ function Cart(){
         />
     ));
     async function handleCheckout() {
-        const response = await fetch('https://roughage-api.vercel.app/api/setCart',{
+        const response = await fetch('/api/setCart',{
             method:'post',
             headers:{
                 'content-type':'application/json'

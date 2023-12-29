@@ -13,7 +13,7 @@ async function handleEvent(e) {
     productID: e.target.value,
   };
 
-  const response = await fetch("https://roughage-api.vercel.app/api/addToCart", {
+  const response = await fetch("/api/addToCart", {
     method: "POST",
     headers: {
       "content-type": "application/json",

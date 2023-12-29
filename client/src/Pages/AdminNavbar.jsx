@@ -24,7 +24,7 @@ function AdminNavbar() {
         
         // const token=sessionStorage.getItem("token")||"";
         var token=Cookies.get('token') || "";
-        const response = await fetch('https://roughage-api.vercel.app/api/auth/logoutAdmin',{
+        const response = await fetch('/api/auth/logoutAdmin',{
             method:'post',
             headers:{
                 'content-type':'application/json'

@@ -18,7 +18,7 @@ const Dashboard = () => {
         async function validateToken() {
             var token = Cookies.get( "token" );
             console.log( token );
-            const response = await fetch( "https://roughage-api.vercel.app/api/auth/validateAdminAuthenctication", {
+            const response = await fetch( "/api/auth/validateAdminAuthenctication", {
                 method: 'post',
                 headers: {
                     'content-type': 'application/json'
