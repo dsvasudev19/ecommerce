@@ -41,7 +41,9 @@ app.get( "/", ( req, res ) => {
     res.send( "HELLO WELCOME" );
 } )
 
-
+app.get( '*', ( req, res ) => {
+    res.sendFile( path.join( __dirname, '../client/build/index.html' ) );
+} );
 conn()
     .then(
         console.log( `mongodb server started successfully...` )
