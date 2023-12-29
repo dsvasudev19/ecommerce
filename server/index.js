@@ -9,7 +9,7 @@ const conn = require( './mongoDB.js/connect.js' )
 const cookieParser = require( 'cookie-parser' )
 const session=require('express-session');
 const { mongo } = require( "mongoose" );
-
+const path=require('path')
 const app = express();
 // const server = http.createServer( app );
 // const wss = new WebSocket.Server( { server } );
@@ -22,6 +22,7 @@ app.use( express.json( { limit: '10mb' } ) )
 app.use( express.static( 'public' ) );
 app.use( express.urlencoded( { limit: '2mb', extended: true } ) )
 app.use( bodyParser.urlencoded( { limit: '10mb', extended: true } ) );
+app.use( express.static( path.join( __dirname, '../client/build' ) ) );
 app.use( "/api", router )
 
 app.use( cookieParser() )

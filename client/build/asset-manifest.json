@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1ea17876.css",
+    "main.js": "/static/js/main.4a998072.js",
+    "static/media/carousel4.jpeg": "/static/media/carousel4.f091e1c5fc54f23f25eb.jpeg",
+    "static/media/galleryPicOne.jpg": "/static/media/galleryPicOne.91c727ae23a90c8acca7.jpg",
+    "static/media/roughAge_logo.png": "/static/media/roughAge_logo.4926c1c298a5ab986ba7.png",
+    "static/media/skeleton-loading.gif": "/static/media/skeleton-loading.12821ecd8d5afdee9a19.gif",
+    "static/media/_c28b5ce6-88c2-4b6e-a1dc-a935af8e6a93.jpg": "/static/media/_c28b5ce6-88c2-4b6e-a1dc-a935af8e6a93.da284e1ec6b2836985f7.jpg",
+    "static/media/roughAge_logo.jpg": "/static/media/roughAge_logo.5eff2c6c722758ea2bf1.jpg",
+    "index.html": "/index.html",
+    "main.1ea17876.css.map": "/static/css/main.1ea17876.css.map",
+    "main.4a998072.js.map": "/static/js/main.4a998072.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ea17876.css",
+    "static/js/main.4a998072.js"
+  ]
+}
