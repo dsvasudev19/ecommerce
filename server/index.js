@@ -7,9 +7,9 @@ const cors = require( 'cors' );
 const router = require( './router/route.js' )
 const conn = require( './mongoDB.js/connect.js' )
 const cookieParser = require( 'cookie-parser' )
-const session=require('express-session');
+const session = require( 'express-session' );
 const { mongo } = require( "mongoose" );
-const path=require('path')
+const path = require( 'path' )
 const app = express();
 // const server = http.createServer( app );
 // const wss = new WebSocket.Server( { server } );
@@ -23,7 +23,8 @@ app.use( express.static( 'public' ) );
 app.use( express.urlencoded( { limit: '2mb', extended: true } ) )
 app.use( bodyParser.urlencoded( { limit: '10mb', extended: true } ) );
 app.use( express.static( path.join( __dirname, '../client/build' ) ) );
-app.use( "/api", router )
+app.use(router)
+
 
 app.use( cookieParser() )
 app.use(
@@ -37,7 +38,7 @@ app.use(
     } )
 );
 app.get( "/", ( req, res ) => {
-    console.log(" / file from backend")
+    console.log( " / file from backend" )
     res.send( "HELLO WELCOME" );
 } )
 
@@ -49,7 +50,7 @@ conn()
         console.log( `mongodb server started successfully...` )
 
     ).then(
-        app.listen( process.env.PORT||3001, function ( req, res ) {
+        app.listen( process.env.PORT || 3001, function ( req, res ) {
             console.log( `server started on port number ${ process.env.PORT }` );
         } )
         // server.listen( PORT_NUM, () => {
@@ -57,7 +58,7 @@ conn()
         // } );
     )
     .catch( error => {
-        console.log( "unable to start mongodb server." + error);
+        console.log( "unable to start mongodb server." + error );
     } )
 
 
@@ -68,7 +69,7 @@ conn()
 //     console.log( `server started on port number ${ PORT_NUM }` );
 // } )
 
-module.exports=app;
+module.exports = app;
 
 
 

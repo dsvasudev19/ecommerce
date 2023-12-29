@@ -13,7 +13,7 @@
 //             setQuant((prevQuant)=>{
 //                 var newQuant=prevQuant+1;
                 
-//                 fetch(' /api/updateCart',{
+//                 fetch(' /updateCart',{
 //                     method:'post',
 //                     headers:{
 //                         'content-type':'application/json'
@@ -28,7 +28,7 @@
 //             setQuant((prevQuant)=>{
 //                 if(prevQuant>1){
 //                     var newQuant=prevQuant-1;
-//                     fetch(' /api/updateCart',{
+//                     fetch(' /updateCart',{
 //                         method:'post',
 //                         headers:{
 //                             'content-type':"application/json"
@@ -44,7 +44,7 @@
 //             setItemCount(itemCount-props.count);
 //             const id=props.id;
 //             try {
-//                 await fetch(' /api/deleteProduct',{
+//                 await fetch(' /deleteProduct',{
 //                     method:"DELETE",
 //                     headers:{
 //                         'content-type':"application/json"

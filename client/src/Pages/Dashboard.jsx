@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 const Dashboard = () => {
     const [ token, setToken ] = useState( Cookies.get( "token" ) || "" );
-    const [ isAuthenticated, setIsAuthenticated ] = useState( Cookies.get( "Authenticated" ) ==='true' )
+    const [ isAuthenticated, setIsAuthenticated ] = useState( Cookies.get( "Authenticated" ) === 'true' )
     const navigate = useNavigate();
     const location = useLocation();
     const [ count, setCount ] = useState( 0 );
@@ -18,7 +18,7 @@ const Dashboard = () => {
         async function validateToken() {
             var token = Cookies.get( "token" );
             console.log( token );
-            const response = await fetch( "/api/auth/validateAdminAuthenctication", {
+            const response = await fetch( "/auth/validateAdminAuthenctication", {
                 method: 'post',
                 headers: {
                     'content-type': 'application/json'
@@ -26,14 +26,14 @@ const Dashboard = () => {
                 body: JSON.stringify( { token } )
             } ).then( async ( response ) => {
                 if ( response.status === 205 ) {
-                    Cookies.set('Authenticated',true);
+                    Cookies.set( 'Authenticated', true );
                     // localStorage.setItem( "authenticated", true );
                     // sessionStorage.setItem( 'authenticated', true );
                     setIsAuthenticated( true );
                 } else if ( response.status === 401 ) {
                     console.log( "failure" )
                     setIsAuthenticated( false );
-                    Cookies.set('Authenticated',false);
+                    Cookies.set( 'Authenticated', false );
                     localStorage.setItem( "authenticated", false );
                     sessionStorage.setItem( 'authenticated', false );
                     <AdminLoginpage />

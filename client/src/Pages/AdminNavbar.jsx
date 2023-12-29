@@ -19,33 +19,33 @@ import Cookies from 'js-cookie';
 
 
 function AdminNavbar() {
-    const navigate=useNavigate();
-    async function logOutAdmin(){
-        
+    const navigate = useNavigate();
+    async function logOutAdmin() {
+
         // const token=sessionStorage.getItem("token")||"";
-        var token=Cookies.get('token') || "";
-        const response = await fetch('/api/auth/logoutAdmin',{
-            method:'post',
-            headers:{
-                'content-type':'application/json'
+        var token = Cookies.get( 'token' ) || "";
+        const response = await fetch( '/auth/logoutAdmin', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify({token})
-        }).then(async response=>{
-            const parsedData=response.json();
-            if(response.status === 206){
-                Cookies.set('Authenticated',false)
+            body: JSON.stringify( { token } )
+        } ).then( async response => {
+            const parsedData = response.json();
+            if ( response.status === 206 ) {
+                Cookies.set( 'Authenticated', false )
                 // localStorage.setItem("authenticated",false);
                 // sessionStorage.setItem("token","");
-                Cookies.set('token',"");
+                Cookies.set( 'token', "" );
                 // sessionStorage.setItem("authenticated",false);
-                Swal.fire("Successfully Logged Out","","success");
-                navigate("/admin",{replace:true});
-            }else{
-                Swal.fire(parsedData.msg,"","question");
+                Swal.fire( "Successfully Logged Out", "", "success" );
+                navigate( "/admin", { replace: true } );
+            } else {
+                Swal.fire( parsedData.msg, "", "question" );
             }
-        })
+        } )
     }
-    
+
 
     return (
         <>
